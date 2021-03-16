@@ -1,0 +1,13 @@
+n,m = map(int, input().split())
+print(n-1+n*(m-1))
+
+"""n = int(input("n은 ? : "))
+m = int(input("m은 ? : "))
+if n != m and n > m:
+    chocolate = (n-1)+n*(m-1)
+elif n != m and m > n:
+    chocolate = (m-1)+m*(n-1)
+elif n == m:
+    chocolate = n*m-1
+print(chocolate)"""
+#아래에 있는게 제가 한것인데 백준에 제출하면 틀린답으로 나와서 구글에 검색후 위에있는걸로 제출합니다
