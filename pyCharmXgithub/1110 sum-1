@@ -1,0 +1,18 @@
+n = int(input(""))
+count = 0
+if n<10 :
+    n = "0" + str(n)
+else:
+    n = str(n)
+origin = n
+while True:
+    count += 1
+    k = n
+    total = 0
+    for i in range(len(k)):
+        total += int(k[i])
+    k = str(total)
+    n = n[-1]+k[-1]
+    if n == origin:
+        break
+print(count)
