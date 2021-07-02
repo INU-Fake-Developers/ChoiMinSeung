@@ -1,0 +1,7 @@
+S = input("")
+l = []
+for j in S:
+    l.append(S)
+    S = S[1:]
+for i in sorted(l):
+    print(i)
