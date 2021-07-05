@@ -1,0 +1,18 @@
+n,l = map(int,input().split())
+trees = list(map(int,input().split()))
+left = 0
+right = max(trees)
+res = []
+while not right < left:
+    length = 0
+    mid = (left+right) // 2
+    length = sum(i-mid if i > mid else 0 for i in trees)
+    if length == l:
+        res.append(mid)
+        break
+    elif length > l:
+        res.append(mid)
+        left = mid+1
+    else:
+        right = mid-1
+print(max(res))
