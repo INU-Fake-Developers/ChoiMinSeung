@@ -1,0 +1,34 @@
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(100000)
+
+def dfs(y,x,a):
+    dx = [-1,1,0,0]
+    dy = [0,0,-1,1]
+    visited[y][x] = 1
+    for i in range(4):
+        nowx,nowy = dx[i]+x, dy[i]+y
+        if 0<=nowx<n and 0 <=nowy<n and visited[nowy][nowx]==0 and arr[nowy][nowx]>a:
+            dfs(nowy,nowx,a)
+n = int(input())
+arr = [list(map(int,input().split())) for _ in range(n)]
+List = []
+minn = 0
+maxn = 0
+for i in range(len(arr)):
+    List.append(max(arr[i]))
+    List.append(min(arr[i]))
+minn = min(List)
+maxn = max(List)
+ans = 1
+for a in range(minn,maxn+1):
+    cnt = 0
+    visited = [[0]*n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if arr[i][j]>a and visited[i][j] == 0:
+                dfs(i,j,a)
+                cnt+= 1
+    if cnt>ans:
+        ans = cnt
+print(ans)
